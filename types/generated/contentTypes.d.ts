@@ -781,6 +781,36 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiClassRoomClassRoom extends Schema.CollectionType {
+  collectionName: 'class_rooms';
+  info: {
+    singularName: 'class-room';
+    pluralName: 'class-rooms';
+    displayName: 'Class room';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name_of_Classroom: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::class-room.class-room',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::class-room.class-room',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRoomRoom extends Schema.CollectionType {
   collectionName: 'rooms';
   info: {
@@ -912,6 +942,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::class-room.class-room': ApiClassRoomClassRoom;
       'api::room.room': ApiRoomRoom;
       'api::student.student': ApiStudentStudent;
       'api::subject.subject': ApiSubjectSubject;
