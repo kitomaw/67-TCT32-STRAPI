@@ -793,6 +793,16 @@ export interface ApiClassRoomClassRoom extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
+    students: Attribute.Relation<
+      'api::class-room.class-room',
+      'manyToMany',
+      'api::class-room.class-room'
+    >;
+    class_rooms: Attribute.Relation<
+      'api::class-room.class-room',
+      'manyToMany',
+      'api::class-room.class-room'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

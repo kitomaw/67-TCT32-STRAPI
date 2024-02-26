@@ -11,5 +11,18 @@
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {}
+  "attributes": {
+    "students": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::class-room.class-room",
+      "inversedBy": "class_rooms"
+    },
+    "class_rooms": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::class-room.class-room",
+      "inversedBy": "students"
+    }
+  }
 }
