@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "students",
+  "collectionName": "teachers",
   "info": {
-    "singularName": "student",
-    "pluralName": "students",
-    "displayName": "Student",
-    "description": ""
+    "singularName": "teacher",
+    "pluralName": "teachers",
+    "displayName": "Teacher"
   },
   "options": {
     "draftAndPublish": true
