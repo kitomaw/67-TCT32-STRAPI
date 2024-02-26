@@ -787,12 +787,12 @@ export interface ApiClassRoomClassRoom extends Schema.CollectionType {
     singularName: 'class-room';
     pluralName: 'class-rooms';
     displayName: 'Class room';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Name_of_Classroom: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
